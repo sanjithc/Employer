@@ -7,12 +7,33 @@
 //
 
 #import "AppDelegate.h"
+#import "Classes/eLogin.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.viewController = [[eLogin alloc] initWithNibName:@"eLogin" bundle:nil];
+    application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    //[self.navigationController.navigationBar setTintColor:[UIColor blueColor]];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:188/255.0 green:214/255.0 blue:82/255.0 alpha:0] ];
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                   [UIColor clearColor],
+                                                                   UITextAttributeTextColor,
+                                                                   [UIColor blackColor],
+                                                                   UITextAttributeTextShadowColor,
+                                                                   [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+                                                                   UITextAttributeTextShadowOffset,
+                                                                   [UIFont fontWithName:@"QuicksandBold-Regular" size:24.0],
+                                                                   UITextAttributeFont,
+                                                                   nil]];
+    
+    self.window.rootViewController = self.navigationController;
+    [self.window addSubview:[self.navigationController view]];
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

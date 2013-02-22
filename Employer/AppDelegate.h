@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class eLogin;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) eLogin *viewController;
+
+@property (retain, nonatomic) UINavigationController *navigationController;
 
 @end

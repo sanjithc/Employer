@@ -11,4 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+#define WEB_SERVICE_URL @"http://10.0.100.51/hcws_mobile_rest/wshirecraftmobile/jsmobile.svc"
+
 #endif
